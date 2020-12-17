@@ -55,6 +55,18 @@ let getSalario = (empleado, callback) => {
     }
 }
 
+getEmpleado(2, (err, empleado) => {
+    if (err) {
+        return console.log(err);
+    }
+    getSalario(empleado, (err, resp) => {
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log(`El salario de ${resp.nombre} es de ${resp.salario}`);
+    })
+});
 
 // let getSalario = (empleado, callback) => {
 //     let empleadoGet = getEmpleadoByName(empleado, (err, id) => {
@@ -70,16 +82,3 @@ let getSalario = (empleado, callback) => {
 //         }
 //     });
 // }
-
-getEmpleado(1, (err, empleado) => {
-    if (err) {
-        return console.log(err);
-    }
-    getSalario(empleado, (err, resp) => {
-        if (err) {
-            return console.log(err);
-        }
-
-        console.log(`El salario de ${resp.nombre} es de ${resp.salario}`);
-    })
-});
