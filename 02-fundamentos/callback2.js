@@ -68,6 +68,14 @@ getEmpleado(2, (err, empleado) => {
     })
 });
 
+getEmpleadoByName('NeneMalo', (err, id) => {
+    if (err) {
+        return console.log(err);
+    }
+
+    console.log(id);
+});
+
 // let getSalario = (empleado, callback) => {
 //     let empleadoGet = getEmpleadoByName(empleado, (err, id) => {
 //         if (err) {
